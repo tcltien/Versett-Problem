@@ -1,0 +1,14 @@
+{
+  "name": "versett-node",
+  "version": "1.0.0",
+  "description": "Practice for versett",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha cards/test.js"
+  },
+  "author": "TienLe",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^9.1.3"
+  }
+}
