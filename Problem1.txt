@@ -2,32 +2,32 @@ Problem 1
 
 A-a
 SELECT       t.*
-FROM            tree_table as t
+FROM            tree_table as t 
 Inner JOIN user_table as u On t.owner_id = u.id
 WHERE u.email = 'adam@versett.com'
 
 A-b
 SELECT       t.id, t.friendly_name, t.scientific_name, u.name
-FROM            tree_table as t
+FROM            tree_table as t 
 Inner JOIN user_table as u On t.owner_id = u.id
 
 A-c
 SELECT       t.id, COUNT(*) as 'likes'
-FROM            tree_table as t
+FROM            tree_table as t 
 Inner JOIN user_table as u On t.owner_id = u.id
-Inner JOIN like_table as l on t.id = l.tree_id
+Inner JOIN likes_table as l on t.id = l.tree_id
 GROUP by t.id
 
 B
 SELECT       t.*
-FROM            tree_table as t
+FROM            tree_table as t 
 Inner JOIN user_table as u On t.owner_id = u.id
 WHERE u.email != 'adam@versett.com'
 
 C
 SELECT       t.id, COUNT(*) as 'likes'
-FROM            tree_table as t
+FROM            tree_table as t 
 Inner JOIN user_table as u On t.owner_id = u.id
-Inner JOIN like_table as l on t.id = l.tree_id
+Inner JOIN likes_table as l on t.id = l.tree_id
 GROUP by t.id
 HAVING COUNT(*) >= 3;
